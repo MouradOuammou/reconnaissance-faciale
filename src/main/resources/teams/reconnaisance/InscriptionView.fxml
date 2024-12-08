@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teams.reconnaisance.controller.InscriptionController">
+    <left>
+        <AnchorPane prefHeight="400.0" prefWidth="283.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="cameraView" fitHeight="391.0" fitWidth="272.0" layoutX="6.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="400.0" prefWidth="332.0" style="-fx-background-color: #c13838;" BorderPane.alignment="CENTER" />
+    </right>
+</BorderPane>
