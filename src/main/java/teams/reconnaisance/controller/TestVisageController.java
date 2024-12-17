@@ -88,7 +88,7 @@ public class TestVisageController {
     }
 
     @FXML
-    public void stopCamera() {
+        public void stopCamera() {
         capturing = false;
         if (videoCapture.isOpened()) {
             videoCapture.release();  // Libérer la caméra
