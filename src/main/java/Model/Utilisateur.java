@@ -12,13 +12,19 @@ public class Utilisateur {
     public Utilisateur() {
     }
 
-//    public Utilisateur(int id, String nom) {
-//        this.id = id;
-//        this.nom = nom;
-//    }
 
     public Utilisateur(int id, String nom, String email, String password, byte[] image, boolean statut, String typeUser) {
         this.id = id;
+        this.nom = nom;
+        this.email = email;
+        this.password = password;
+        this.image = image;
+        this.statut = statut;
+        this.typeUser = typeUser;
+    }
+
+    public Utilisateur( String nom, String email, String password, byte[] image, boolean statut, String typeUser) {
+        //this.id = id;
         this.nom = nom;
         this.email = email;
         this.password = password;

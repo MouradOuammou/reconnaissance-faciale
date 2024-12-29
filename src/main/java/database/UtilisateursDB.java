@@ -39,7 +39,7 @@ public class UtilisateursDB {
     }
 
     // Méthode pour vérifier si un utilisateur existe par email
-    private boolean utilisateurExiste(String email) throws SQLException {
+    public boolean utilisateurExiste(String email) throws SQLException {
         String query = "SELECT COUNT(*) FROM Utilisateur WHERE email = ?";
         try (Connection cnx = DBConnection.getConnection();
              PreparedStatement pstmt = cnx.prepareStatement(query)) {
@@ -98,17 +98,23 @@ public class UtilisateursDB {
         }
     }
 
-    // Méthode pour supprimer un utilisateur
-    public void deleteUtilisateur(int id) throws SQLException {
-
+    // Méthode pour supprimer un utilisateur de la base de données
+    public void deleteUtilisateur(Utilisateur utilisateur) throws SQLException {
         String query = "DELETE FROM Utilisateur WHERE id = ?";
 
+        // Utiliser la connexion de DBConnection
         try (Connection cnx = DBConnection.getConnection();
              PreparedStatement pstmt = cnx.prepareStatement(query)) {
 
-            pstmt.setInt(1, id);  // L'ID de l'utilisateur à supprimer
-            pstmt.executeUpdate(); // Exécution de la suppression
+            pstmt.setInt(1, utilisateur.getId());  // L'ID de l'utilisateur à supprimer
+
+            pstmt.executeUpdate();  // Exécution de la requête
             System.out.println("Utilisateur supprimé avec succès!");
+        } catch (SQLException e) {
+            System.err.println("Erreur lors de la suppression de l'utilisateur : " + e.getMessage());
+            throw e;  // Relever l'exception pour la remonter à l'appelant
         }
     }
+
+
 }
